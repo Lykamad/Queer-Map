@@ -2,8 +2,8 @@ package com.example.esqueleto.model
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.example.esqueleto.database.LocationsEntity
 import com.example.esqueleto.database.UserDatabase
-import com.example.esqueleto.database.UserEntity
 import com.example.esqueleto.database.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -53,7 +53,7 @@ class UserViewModel(application: Application): AndroidViewModel(application){
     }
 
     //Room Repository Functions
-    val readAllData: LiveData<List<UserEntity>>
+    val readAllData: LiveData<List<LocationsEntity>>
     private val repository: UserRepository
 
     //inicializamos la instancia de la base de datos
@@ -63,33 +63,33 @@ class UserViewModel(application: Application): AndroidViewModel(application){
         readAllData = repository.readAllData
     }
 
-    fun addListUsers(users: List<UserEntity>){
+    fun addListLocation(users: List<LocationsEntity>){
         viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
-            repository.addListUser(users)
+            repository.addListLocation(users)
         }
     }
 
-    fun addUser(user: UserEntity){
+    fun addLocation(user: LocationsEntity){
         viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
-            repository.addUser(user)
+            repository.addLocation(user)
         }
     }
 
-    fun updateUser(user: UserEntity){
+    fun updateUser(location: LocationsEntity){
         viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
-            repository.updateUser(userItem = user)
+            repository.updateLocation(locationItem = location)
         }
     }
 
-    fun deleteUser(user: UserEntity){
+    fun deleteUser(location: LocationsEntity){
         viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
-            repository.deleteUser(userItem = user)
+            repository.deleteLocation(locationItem = location)
         }
     }
 
     fun deleteAllUsers(){
         viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
-            repository.deleteAllUsers()
+            repository.deleteAllLocations()
         }
     }
 }

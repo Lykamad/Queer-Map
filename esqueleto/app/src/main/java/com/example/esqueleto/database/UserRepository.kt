@@ -4,25 +4,25 @@ import androidx.lifecycle.LiveData
 
 class UserRepository (private val userDatabaseDao: UserDAO) {
 
-    val readAllData: LiveData<List<UserEntity>> = userDatabaseDao.getAll()
+    val readAllData: LiveData<List<LocationsEntity>> = userDatabaseDao.getAll()
 
-    suspend fun addListUser(userItem: List<UserEntity>){
-        userDatabaseDao.insert(userItem)
+    suspend fun addListLocation(locationItem: List<LocationsEntity>){
+        userDatabaseDao.insert(locationItem)
     }
 
-    suspend fun addUser(userItem: UserEntity){
-        userDatabaseDao.insertElement(userItem)
+    suspend fun addLocation(locationItem: LocationsEntity){
+        userDatabaseDao.insertElement(locationItem)
     }
 
-    suspend fun updateUser(userItem: UserEntity){
-        userDatabaseDao.update(userItem)
+    suspend fun updateLocation(locationItem: LocationsEntity){
+        userDatabaseDao.update(locationItem)
     }
 
-    suspend fun deleteUser(userItem: UserEntity){
-        userDatabaseDao.delete(userItem)
+    suspend fun deleteLocation(locationItem: LocationsEntity){
+        userDatabaseDao.delete(locationItem)
     }
 
-    suspend fun deleteAllUsers(){
+    suspend fun deleteAllLocations(){
         userDatabaseDao.deleteAll()
     }
 }

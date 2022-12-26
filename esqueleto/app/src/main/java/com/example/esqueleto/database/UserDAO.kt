@@ -10,24 +10,24 @@ import androidx.room.Update
 
 @Dao
 interface UserDAO {
-    @Query("SELECT * FROM usuarios")
-    fun getAll(): LiveData<List<UserEntity>>
+    @Query("SELECT * FROM sitios")
+    fun getAll(): LiveData<List<LocationsEntity>>
 
-    @Query("SELECT * FROM usuarios WHERE userId= :id")
-    fun getById(id: Int):UserEntity?
+    @Query("SELECT * FROM sitios WHERE placeId= :id")
+    fun getById(id: Int):LocationsEntity?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(item: List<UserEntity>) //funciones en segundo plano
+    suspend fun insert(item: List<LocationsEntity>) //funciones en segundo plano
 
     @Insert (onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertElement (item: UserEntity)
+    suspend fun insertElement (item: LocationsEntity)
 
     @Update
-    suspend fun update(item: UserEntity)
+    suspend fun update(item: LocationsEntity)
 
     @Delete
-    suspend fun delete(item: UserEntity)
+    suspend fun delete(item: LocationsEntity)
 
-    @Query ("DELETE FROM usuarios") //@Query no Delete
+    @Query ("DELETE FROM sitios") //@Query no Delete
     suspend fun deleteAll()
 }

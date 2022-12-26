@@ -23,18 +23,17 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
-import com.example.esqueleto.database.UserEntity
+import com.example.esqueleto.database.LocationsEntity
 import com.example.esqueleto.model.UserViewModel
 
 @Composable
-fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, listUsers: List<UserEntity>
+fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, listUsers: List<LocationsEntity>
 ) {
     val userPhoto: String by mUserViewModel.userPhoto.observeAsState(initial = "")
     val userName: String by mUserViewModel.userName.observeAsState(initial = "")
     val userPhone: String by mUserViewModel.userPhone.observeAsState(initial = "")
     val userEmail: String by mUserViewModel.userEmail.observeAsState(initial = "")
     val userCity: String by mUserViewModel.userCity.observeAsState(initial = "")
-    val europe: Boolean by mUserViewModel.europe.observeAsState(initial = false)
 
     Column(
         Modifier.padding(8.dp),
@@ -100,28 +99,11 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
                 fontSize = 20.sp,
                 fontStyle = FontStyle.Italic)
         )
-        Row(verticalAlignment = Alignment.Bottom,
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Switch(
-                checked = europe,
-                onCheckedChange = { mUserViewModel.onEuropeChange(it) },
-                colors = SwitchDefaults.colors(
-                    checkedThumbColor = Color.Blue,
-                    uncheckedThumbColor = Color.Blue,
-                    checkedTrackColor = Color.DarkGray,
-                    uncheckedTrackColor = Color.Gray,
-                    checkedTrackAlpha = 1.0f, //valor de transparencia. Rango (0,1)
-                    uncheckedTrackAlpha = 0.5f
-                )
-            )
-            Text(text = "Europa")
-        }
         Spacer(Modifier.size(15.dp))
-        Button(onClick = { val newUser = UserEntity(null, userName, userEmail, userPhone,
-           "https://cdn.pixabay.com/photo/2016/07/11/15/43/woman1509956_960_720.jpg", userCity, europe)
+        Button(onClick = { val newLocation = LocationsEntity(null, userName, userEmail, userPhone,
+           "https://cdn.pixabay.com/photo/2016/07/11/15/43/woman1509956_960_720.jpg", userCity)
 
-            mUserViewModel.addUser(newUser)
+            mUserViewModel.addLocation(newLocation)
             navController.navigate("listarUsuarios")
         }) {
             Text(text = "Añadir")

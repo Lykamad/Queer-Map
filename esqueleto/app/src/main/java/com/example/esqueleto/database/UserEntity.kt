@@ -4,14 +4,13 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "usuarios")
-data class UserEntity(
+@Entity(tableName = "sitios")
+data class LocationsEntity(
     @PrimaryKey(autoGenerate = true)
-    var userId: Int?,
-    @ColumnInfo(name = "nombre") var cUserName: String, //name y cUserName era lo mismo!!
-    var cUserEmail: String,
-    var cUserPhone: String,
-    var cUserPhoto: String,
-    var cUserCity: String,
-    var cEurope:Boolean
+    var placeId: Int?,
+    @ColumnInfo(name = "nombre") var placeName: String,
+    var placeWeb: String,
+    var placePhone: String,
+    var placePhoto: String,
+    var placeAddress: String
     )

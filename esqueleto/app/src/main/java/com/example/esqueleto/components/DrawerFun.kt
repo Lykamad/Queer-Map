@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
-import com.example.esqueleto.database.UserEntity
 import com.example.esqueleto.components.NavDrawerItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

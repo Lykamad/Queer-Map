@@ -27,24 +27,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
-import com.example.esqueleto.database.UserEntity
+import com.example.esqueleto.database.LocationsEntity
 import com.example.esqueleto.model.UserViewModel
 
 @Composable
 fun ListUsers(mUserViewModel: UserViewModel) {
-    val userList: List<UserEntity> by mUserViewModel.readAllData.observeAsState(listOf()) //tener lista actualizada //users??
+    val userList: List<LocationsEntity> by mUserViewModel.readAllData.observeAsState(listOf()) //tener lista actualizada //users??
 
     LazyColumn(
         modifier = Modifier.padding(10.dp)
     ) {
         items(userList) { index ->
-            UserProfile(userInfo = index, mUserViewModel)
+            UserProfile(locationInfo = index, mUserViewModel)
         }
     }
 }
 
 @Composable
-fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
+fun UserProfile(locationInfo: LocationsEntity, mUserViewModel: UserViewModel) {
     Column() {
         Row(
             Modifier.padding(8.dp),
@@ -61,10 +61,10 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                 painter = rememberAsyncImagePainter(
                     ImageRequest
                         .Builder(LocalContext.current)
-                        .data(data = Uri.parse(userInfo.cUserPhoto))
+                        .data(data = Uri.parse(locationInfo.placePhoto))
                         .build()
                 ),
-                contentDescription = userInfo.cUserName,
+                contentDescription = locationInfo.placeName,
             )
             Spacer(Modifier.size(10.dp))
             Column(
@@ -74,7 +74,7 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
             ) {
                 Text(
                     modifier = Modifier.padding(4.dp),
-                    text = userInfo.cUserName,
+                    text = locationInfo.placeName,
                     fontWeight = FontWeight.Bold,
                     fontSize = 12.sp,
                     fontStyle = FontStyle.Italic,
@@ -82,7 +82,7 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                 Spacer(Modifier.size(8.dp))
                 Text(
                     modifier = Modifier.padding(4.dp),
-                    text = userInfo.cUserPhone
+                    text = locationInfo.placePhone
                 )
             }
             Spacer(Modifier.size(10.dp))
@@ -93,7 +93,7 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
             ) {
                 Text(
                     modifier = Modifier.padding(4.dp),
-                    text = userInfo.cUserEmail,
+                    text = locationInfo.placeWeb,
                     fontWeight = FontWeight.Bold,
                     fontSize = 12.sp,
                     fontStyle = FontStyle.Italic,
@@ -101,26 +101,17 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                 Spacer(Modifier.size(8.dp))
                 Text(
                     modifier = Modifier.padding(4.dp),
-                    text = userInfo.cUserCity
+                    text = locationInfo.placeAddress
                 )
             }
 
-            IconButton(onClick = { mUserViewModel.deleteUser(userInfo) })
+            IconButton(onClick = { mUserViewModel.deleteUser(locationInfo) })
             {Icon(imageVector = Icons.Default.Delete,
                 contentDescription = "Delete")}
         }
 
         Spacer(Modifier.size(8.dp))
-        var europe = userInfo.cEurope //var class user
 
-        Text(
-            modifier = Modifier.padding(4.dp),
-            text = if(europe) "Continentes seleccionados: Europa"
-            else "Debe seleccionar un contienente para mostrar ciudades",
-            fontWeight = FontWeight.Bold,
-            fontSize = 12.sp,
-            fontStyle = FontStyle.Italic,
-        )
     }
 }
 
