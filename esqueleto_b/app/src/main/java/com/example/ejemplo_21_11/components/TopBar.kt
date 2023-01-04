@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun TopBar(scope: CoroutineScope, scaffoldState: ScaffoldState){
     TopAppBar(
-        title = { Text(text = "Ciudades del Mundo") },
+        title = { Text(text = "Queer Map") },
         contentColor = Color.White,
         elevation = 10.dp,
         navigationIcon = {

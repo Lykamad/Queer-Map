@@ -12,7 +12,7 @@ sealed class NavDrawerItem(
     var texto: String
 ){
     object Inicio: NavDrawerItem( "listarUsuarios", Icons.Default.Home, "Inicio")
-    object Favoritos: NavDrawerItem( "listarUsuarios", Icons.Default.Favorite, "Favoritos")
-    object Perfil: NavDrawerItem( "listarUsuarios", Icons.Default.Person, "Perfil")
+    object Favoritos: NavDrawerItem( "listarUsuarios", Icons.Default.Favorite, "Mapas")
+    object Perfil: NavDrawerItem( "listarUsuarios", Icons.Default.Person, "Mi Perfil")
 }
 
