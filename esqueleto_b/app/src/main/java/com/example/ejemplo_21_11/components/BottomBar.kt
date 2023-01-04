@@ -5,10 +5,7 @@ import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,7 +34,7 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
             onClick = { selectedIcon.value = 1
                 navController.navigate("listarUsuarios")
             },
-            icon = { Icon(imageVector = Icons.Default.Menu,//Icons.Default.Favorite,
+            icon = { Icon(imageVector = Icons.Default.Star,//Icons.Default.Favorite,
                 contentDescription = "Favoritos",
                 tint = Color.White)
             },
