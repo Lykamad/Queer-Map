@@ -71,6 +71,9 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-livedata:$compose_version")
     //load image from url and uri
     implementation("io.coil-kt:coil-compose:2.2.2")
+    //Biblioteca de google maps para poder usarla en la app
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
 
     //Base de datos Room
     def roomVersion = "2.4.3"
