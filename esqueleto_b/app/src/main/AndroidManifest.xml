@@ -4,6 +4,10 @@
     package="com.example.ejemplo_21_11">
     <!-- Permisos de internet: porque las imágenes son de internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Permisos de ubicación -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
 
     <application
         android:allowBackup="true"
