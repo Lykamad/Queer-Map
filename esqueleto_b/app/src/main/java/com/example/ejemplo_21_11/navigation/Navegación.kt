@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import com.example.ejemplo_21_11.database.UserEntity
 import com.example.ejemplo_21_11.model.UserViewModel
 import com.example.ejemplo_21_11.screens.ListUsers
+import com.example.ejemplo_21_11.screens.MyProfile
 import com.example.ejemplo_21_11.screens.ProfileEdit
 
 @Composable
@@ -18,5 +19,7 @@ fun Navegacion (navController : NavHostController, userViewModel: UserViewModel)
 
     NavHost(navController = navController, startDestination = "listarUsuarios"){
         composable("listarUsuarios"){ ListUsers(userViewModel) }
-        composable("crearUsuarios"){ ProfileEdit(navController, userViewModel, userViewModelList) }} //el orden importa //en el 3r val espera UserEntity pero le paso User -> ERROR
+        composable("crearUsuarios"){ ProfileEdit(navController, userViewModel, userViewModelList) } //el orden importa //en el 3r val espera UserEntity pero le paso User -> ERROR
+        composable("miPerfil"){ MyProfile()}
+}
 }

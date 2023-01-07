@@ -43,7 +43,7 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
         BottomNavigationItem(
             selected = (selectedIcon.value==0),
             onClick = { selectedIcon.value = 2
-                navController.navigate("listarUsuarios")
+                navController.navigate("miPerfil")
             },
             icon = { Icon(imageVector = Icons.Default.Person,
                 contentDescription = "Perfil",
