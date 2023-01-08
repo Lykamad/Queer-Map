@@ -13,6 +13,6 @@ sealed class NavDrawerItem(
 ){
     object Inicio: NavDrawerItem( "listarUsuarios", Icons.Default.Home, "Inicio")
     object Favoritos: NavDrawerItem( "listarUsuarios", Icons.Default.Star, "Mapas")
-    object Perfil: NavDrawerItem( "listarUsuarios", Icons.Default.Person, "Mi Perfil")
+    object Perfil: NavDrawerItem( "miPerfil", Icons.Default.Person, "Mi Perfil")
 }
 

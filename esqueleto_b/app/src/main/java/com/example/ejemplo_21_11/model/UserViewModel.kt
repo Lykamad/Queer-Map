@@ -1,6 +1,10 @@
 package com.example.ejemplo_21_11.model
 
 import android.app.Application
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.*
 import com.example.ejemplo_21_11.database.UserDatabase
 import com.example.ejemplo_21_11.database.UserEntity
@@ -9,6 +13,56 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application): AndroidViewModel(application){
+
+
+    //My profile
+
+
+    //Foto2
+    private val _profilePhoto = MutableLiveData<String>("")
+    val profilePhoto: LiveData<String> = _profilePhoto
+
+    fun onProfilePhotoChange(newData: String){
+        _profilePhoto.value = newData
+    }
+
+    //Nombre
+    var profileUserName by mutableStateOf("")
+
+    fun onProfileUserNameChange(newData:String){
+        profileUserName = newData
+    }
+
+    //Pronombres
+    var profilePronouns by mutableStateOf("")
+
+    fun onProfilePronounsChange(newData:String){
+        profilePronouns = newData
+    }
+
+    //Ubicación
+    var profileLocation by mutableStateOf("")
+
+    fun onProfileLocationChange(newData:String){
+        profileLocation = newData
+    }
+
+    //Descripión
+    var profileDescription by mutableStateOf("")
+
+    fun onProfileDescriptionChange(newData:String){
+        profileDescription = newData
+    }
+
+    //Orientación
+    var profileSexuality by mutableStateOf("")
+
+    fun onProfileSexualityChange(newData:String){
+        profileSexuality = newData
+    }
+
+
+    //Fin my profile
 
     private val _userName = MutableLiveData<String>("")
     val userName: LiveData<String> = _userName
