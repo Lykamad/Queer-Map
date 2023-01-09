@@ -15,6 +15,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.ejemplo_21_11.components.BottomBar
@@ -23,13 +24,13 @@ import com.example.ejemplo_21_11.components.TopBar
 import com.example.ejemplo_21_11.navigation.Navegacion
 import com.example.ejemplo_21_11.model.UserViewModel
 import com.example.ejemplo_21_11.model.UserViewModelFactory
-import com.example.ejemplo_21_11.ui.theme.Ejemplo_21_11Theme
+import com.example.ejemplo_21_11.ui.theme.QueerMapTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Ejemplo_21_11Theme() {
+            QueerMapTheme() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -58,6 +59,7 @@ fun MainScreen(userViewModel: UserViewModel) {
         scaffoldState = scaffoldState,
         topBar = { TopBar(scope, scaffoldState) },
         bottomBar = { BottomBar(navController) },
+        drawerBackgroundColor = colorResource(id = R.color.Blue1),
         drawerContent = { Drawer(scope, scaffoldState, navController = navController)},
         floatingActionButton = {
             FloatingActionButton(

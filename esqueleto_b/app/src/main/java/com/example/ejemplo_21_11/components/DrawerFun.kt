@@ -31,11 +31,16 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
                 .fillMaxWidth()
                 .padding(10.dp)
         )*/
-        Spacer(modifier = Modifier
+        Text (modifier = Modifier
+            .padding(20.dp),
+            text = "Queer map",
+            fontSize = 24.sp,
+            color = Color.Black)
+        /*Spacer(modifier = Modifier
             .height(10.dp)
             .fillMaxWidth()
             .padding(10.dp)
-        )
+        )*/
         listItems.forEach{
             DrawerItem(
                 item = it,

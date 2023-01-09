@@ -1,5 +1,6 @@
 package com.example.ejemplo_21_11.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
@@ -10,8 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.ejemplo_21_11.R
 
 @Composable
 fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar navegación
@@ -27,18 +30,17 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
                 contentDescription = "Home",
                 tint = Color.White)
             },
-            label = { Text(text = "Inicio") }
+            //label = { Text(text = "Inicio") }
         )
         BottomNavigationItem(
             selected = (selectedIcon.value==0),
             onClick = { selectedIcon.value = 1
                 navController.navigate("listarUsuarios")
             },
-            icon = { Icon(imageVector = Icons.Default.Star,//Icons.Default.Favorite,
-                contentDescription = "Favoritos",
-                tint = Color.White)
+            icon = { Image(painter = painterResource(id = R.drawable.map),//Icons.Default.Favorite,
+                contentDescription = "Mapa")
             },
-            label = { Text(text = "Mapas") }
+            //label = { Text(text = "Mapa") }
         )
         BottomNavigationItem(
             selected = (selectedIcon.value==0),
@@ -49,7 +51,7 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
                 contentDescription = "Perfil",
                 tint = Color.White)
             },
-            label = { Text(text = "Mi Perfil") }
+            //label = { Text(text = "Mi Perfil") }
         )
     }
 }
