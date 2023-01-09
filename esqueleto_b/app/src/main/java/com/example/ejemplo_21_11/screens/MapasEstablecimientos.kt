@@ -78,26 +78,25 @@ fun ViewRestaurante() {
         modifier = Modifier
             .padding(20.dp)
             .padding(top = 220.dp),
-        fontSize = 20.sp,
-        color = Color.Black,
-        fontWeight = FontWeight.ExtraBold,
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Bold,
+        color = Color.Black
         )
 
     Text(
         text = "Restaurante",
         modifier = Modifier
             .padding(20.dp)
-            .padding(top = 255.dp),
+            .padding(top = 265.dp),
         fontSize = 16.sp,
-        color = Color.Black,
-        fontWeight = FontWeight.ExtraBold,
+        color = Color.Black
     )
 
     Text(
         text = "C/ Correos, 10 Valencia",
         modifier = Modifier
             .padding(20.dp)
-            .padding(top = 285.dp),
+            .padding(top = 295.dp),
         fontSize = 16.sp,
         color = Color.Black
     )
@@ -125,20 +124,19 @@ fun CreateComment(comentario: Comentarios) {
         Image(painter = painterResource(id = comentario.Foto),
             contentDescription = comentario.Nombre,
             modifier = Modifier
-                .size(80.dp)
+                .size(70.dp)
                 .padding(1.dp)
                 .clip(CircleShape)
                 .border(0.5.dp, color = androidx.compose.ui.graphics.Color.Blue, CircleShape),
             contentScale = ContentScale.Crop
         )
+        Spacer(modifier = Modifier
+            .padding(8.dp)
+        )
 
         Column(modifier = Modifier
             .weight(1f)
-            .padding(5.dp)
         ) {
-            Spacer(modifier = Modifier
-                .size(8.dp))
-
             Text(text = comentario.Nombre,
                 fontWeight = FontWeight.Bold
             )

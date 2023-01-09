@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -35,6 +36,7 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
             .padding(20.dp),
             text = "Queer map",
             fontSize = 24.sp,
+            //fontWeight = FontWeight.Bold, //no funciona
             color = Color.Black)
         /*Spacer(modifier = Modifier
             .height(10.dp)
@@ -77,6 +79,7 @@ fun DrawerItem(item: NavDrawerItem,
         Spacer(modifier = Modifier.padding(6.dp))
         Text(text = item.texto,
             fontSize = 18.sp,
+            //fontWeight = FontWeight.Bold, //no funciona
             color = Color.Black)
     }
 }

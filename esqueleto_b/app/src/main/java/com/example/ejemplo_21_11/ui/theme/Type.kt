@@ -9,9 +9,9 @@ import com.example.ejemplo_21_11.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    // Drawer (logo(24.sp)+items(en fun)), "Cambiar foto de perfil"
+    // Drawer (logo(24.sp)+items(en fun)), "Cambiar foto de perfil", Caboa page
     body1 = TextStyle(
-        fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+        fontFamily = FontFamily(Font(R.font.poppins_regular)),
         fontSize = 16.sp
     ),
     //textfield
