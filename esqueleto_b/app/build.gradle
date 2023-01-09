@@ -63,6 +63,11 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 
+    //Mapas
+    implementation ("com.google.maps.android:maps-compose:1.0.0")
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
+
+
     //profile pic
     implementation("io.coil-kt:coil:2.2.2")
     //navigation

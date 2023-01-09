@@ -35,7 +35,7 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
         BottomNavigationItem(
             selected = (selectedIcon.value==0),
             onClick = { selectedIcon.value = 1
-                navController.navigate("listarUsuarios")
+                navController.navigate("miMapa")
             },
             icon = { Image(painter = painterResource(id = R.drawable.map),//Icons.Default.Favorite,
                 contentDescription = "Mapa")
