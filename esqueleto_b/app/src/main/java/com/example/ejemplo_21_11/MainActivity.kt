@@ -47,6 +47,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+data class Lugar(
+    var imageID: Int,
+    var lugarName: String,
+    var lugarInfo: Int
+)
+
+val misLugares = listOf<Lugar>(
+    Lugar(R.drawable.guakame, "Guakame", R.string.GuakameDescrip)
+)
+
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen(userViewModel: UserViewModel) {
