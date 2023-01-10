@@ -22,6 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -63,12 +64,14 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                     .padding(1.dp)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
-                painter = rememberAsyncImagePainter(
+          /* No funciona, código para que el usuario subiese su foto
+          painter = rememberAsyncImagePainter(
                     ImageRequest
                         .Builder(LocalContext.current)
                         .data(data = Uri.parse(profileInfo.profilePhoto))
                         .build()
-                ),
+                ),*/
+                painter = painterResource(id = R.drawable.person),
                 contentDescription = profileInfo.profileName,
             )
                 Spacer(Modifier.size(15.dp))
@@ -144,6 +147,9 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                 IconButton(onClick = { mUserViewModel.deleteUserProfile(profileInfo) })
                 {Icon(imageVector = Icons.Default.Delete,
                     contentDescription = "Delete")}
+        
+            Spacer(modifier = Modifier.size(170.dp))
+        
        }
     }
 
