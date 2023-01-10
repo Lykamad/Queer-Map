@@ -21,5 +21,6 @@ fun Navegacion (navController : NavHostController, userViewModel: UserViewModel)
         composable("miPerfil") {MyProfile(userViewModel)}
         composable("miMapa") {MyMaps(navController)}
         composable("mapasEstablecimientos") { MapasEstablecimientos(navController) }
+        composable("home") { Home(navController)}
    }
 }
