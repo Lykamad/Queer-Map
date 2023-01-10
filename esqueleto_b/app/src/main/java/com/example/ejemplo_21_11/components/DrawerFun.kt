@@ -10,10 +10,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.ejemplo_21_11.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -32,12 +35,22 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
                 .fillMaxWidth()
                 .padding(10.dp)
         )*/
-        Text (modifier = Modifier
-            .padding(20.dp),
-            text = "Queer map",
-            fontSize = 24.sp,
-            //fontWeight = FontWeight.Bold, //no funciona
-            color = Color.Black)
+        Row( ) {
+            Text(
+                modifier = Modifier
+                 .padding(20.dp,12.dp,10.dp,20.dp),
+                text = "Queer Map",
+                fontSize = 24.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                color = Color.Black
+            )
+            Image(painter = painterResource(id = R.drawable.logo_2),
+                contentDescription = "Logo aplicación",
+                modifier = Modifier
+                    .padding(0.dp,12.dp)
+                   .height(35.dp)
+            )
+        }
         /*Spacer(modifier = Modifier
             .height(10.dp)
             .fillMaxWidth()
@@ -69,7 +82,9 @@ fun DrawerItem(item: NavDrawerItem,
             .clickable { onclick(item) },
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Image(imageVector = item.icono,
+        Image(
+            imageVector = item.icono,
+            //painter = painterResource(id = R.drawable.map),
             contentDescription = item.texto,
             colorFilter = ColorFilter.tint(Color.Black),
             modifier = Modifier
@@ -79,7 +94,7 @@ fun DrawerItem(item: NavDrawerItem,
         Spacer(modifier = Modifier.padding(6.dp))
         Text(text = item.texto,
             fontSize = 18.sp,
-            //fontWeight = FontWeight.Bold, //no funciona
+            fontFamily = FontFamily(Font(R.font.poppins_semibold)),
             color = Color.Black)
     }
 }

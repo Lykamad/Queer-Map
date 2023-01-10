@@ -22,6 +22,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -77,9 +79,9 @@ fun ViewRestaurante() {
         text = "CABOA",
         modifier = Modifier
             .padding(20.dp)
-            .padding(top = 220.dp),
+            .padding(top = 225.dp),
         fontSize = 24.sp,
-        fontWeight = FontWeight.Bold,
+        fontFamily = FontFamily(Font(R.font.poppins_semibold)),
         color = Color.Black
         )
 
@@ -87,7 +89,7 @@ fun ViewRestaurante() {
         text = "Restaurante",
         modifier = Modifier
             .padding(20.dp)
-            .padding(top = 265.dp),
+            .padding(top = 260.dp),
         fontSize = 16.sp,
         color = Color.Black
     )
@@ -96,7 +98,7 @@ fun ViewRestaurante() {
         text = "C/ Correos, 10 Valencia",
         modifier = Modifier
             .padding(20.dp)
-            .padding(top = 295.dp),
+            .padding(top = 290.dp),
         fontSize = 16.sp,
         color = Color.Black
     )
@@ -138,7 +140,7 @@ fun CreateComment(comentario: Comentarios) {
             .weight(1f)
         ) {
             Text(text = comentario.Nombre,
-                fontWeight = FontWeight.Bold
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
             )
             Text(text = comentario.Comentario)
         }
