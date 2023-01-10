@@ -51,21 +51,7 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.Center
         ) {
-            Image(
-                modifier = Modifier
-                    .size(80.dp)
-                    .border(0.5.dp, Color.Blue, CircleShape)
-                    .padding(1.dp)
-                    .clip(CircleShape),
-                contentScale = ContentScale.Crop,
-                painter = rememberAsyncImagePainter(
-                    ImageRequest
-                        .Builder(LocalContext.current)
-                        .data(data = Uri.parse(userInfo.cUserPhoto))
-                        .build()
-                ),
-                contentDescription = userInfo.cUserName,
-            )
+
             Spacer(Modifier.size(10.dp))
             Column(
                 modifier = Modifier
@@ -76,7 +62,7 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                     modifier = Modifier.padding(4.dp),
                     text = userInfo.cUserName,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
+                    fontSize = 20.sp,
                     fontStyle = FontStyle.Italic,
                 )
                 Spacer(Modifier.size(8.dp))
