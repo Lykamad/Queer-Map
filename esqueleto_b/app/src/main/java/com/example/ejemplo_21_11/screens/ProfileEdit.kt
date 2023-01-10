@@ -49,7 +49,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 fontStyle = FontStyle.Italic)
         )
         Spacer(Modifier.size(10.dp))
@@ -60,18 +60,18 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 fontStyle = FontStyle.Italic)
         )
         Spacer(Modifier.size(10.dp))
         OutlinedTextField(
             value = userCity,
             onValueChange = { mUserViewModel.onUserCityChange(it)},
-            label = { Text(text = "Introduce tu ciudad") },
+            label = { Text(text = "Introduce la localidad") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 fontStyle = FontStyle.Italic)
         )
 

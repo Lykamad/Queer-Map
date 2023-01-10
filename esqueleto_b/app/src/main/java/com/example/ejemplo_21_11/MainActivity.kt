@@ -24,6 +24,8 @@ import com.example.ejemplo_21_11.components.TopBar
 import com.example.ejemplo_21_11.navigation.Navegacion
 import com.example.ejemplo_21_11.model.UserViewModel
 import com.example.ejemplo_21_11.model.UserViewModelFactory
+import com.example.ejemplo_21_11.ui.theme.Blue1
+import com.example.ejemplo_21_11.ui.theme.Orange
 import com.example.ejemplo_21_11.ui.theme.QueerMapTheme
 
 class MainActivity : ComponentActivity() {
@@ -65,8 +67,8 @@ fun MainScreen(userViewModel: UserViewModel) {
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { navController.navigate("crearUsuarios") },
-                backgroundColor = Color.Blue,
-                contentColor = Color.White
+                backgroundColor = Orange,
+                contentColor = Color.Black
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,

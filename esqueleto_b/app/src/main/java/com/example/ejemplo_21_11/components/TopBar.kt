@@ -28,8 +28,9 @@ fun TopBar(scope: CoroutineScope, scaffoldState: ScaffoldState){
                     .height(35.dp)
             )
             Text(text = "Queer Map")
+
         },
-        contentColor = Color.White,
+        contentColor = Color.Black,
         elevation = 10.dp,
         navigationIcon = {
             IconButton(onClick = {
@@ -38,7 +39,8 @@ fun TopBar(scope: CoroutineScope, scaffoldState: ScaffoldState){
                 }
             }) {
                 Icon(imageVector = Icons.Default.Menu,
-                    contentDescription = "Menu")
+                    contentDescription = "Menu",
+                    tint = Color.Black)
             }
         }
     )

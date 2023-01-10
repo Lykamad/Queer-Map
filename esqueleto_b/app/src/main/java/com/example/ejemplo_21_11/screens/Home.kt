@@ -24,6 +24,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -54,7 +55,7 @@ val listaLugares= arrayListOf<Lugar>(
     Lugar(R.drawable.cafe_de_las_horas, "Cafe de las Horas"),
     Lugar(R.drawable.living_bakkali, "Living Bakkali"),
     Lugar(R.drawable.asoko, "Asoko"),
-    Lugar(R.drawable.la_sastreria, "La Sastreria")
+    Lugar(R.drawable.la_sastreria, "La Sastrería")
 )
 
 @Composable
@@ -100,10 +101,9 @@ fun CreateLugarCard(selectedLugar: Lugar) {
                 modifier = Modifier
                     .align(Alignment.BottomStart)
                     .padding(12.dp),
-                fontSize = 16.sp,
-                color = Color.White,
-                fontWeight = FontWeight.ExtraBold,
-                fontStyle = FontStyle.Italic
+                fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                color = Color.White
             )
         }
     }

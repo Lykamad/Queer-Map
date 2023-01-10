@@ -85,7 +85,7 @@ fun CreateProfile(navController: NavController, mUserViewModel: UserViewModel, l
         Spacer(Modifier.size(10.dp))
         OutlinedTextField( //para que el usuario pueda escribir
             value = profileName,
-            onValueChange = { mUserViewModel.onProfileNameChange(it)}, //cuando el ususrio teclee, es un evento {}
+            onValueChange = { mUserViewModel.onProfileNameChange(it)},
             label = { Text(text = "Introduce tu nombre") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(fontSize = 16.sp)

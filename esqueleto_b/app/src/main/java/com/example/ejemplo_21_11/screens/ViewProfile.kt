@@ -141,9 +141,9 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                         .padding(8.dp, 0.dp)
                  )
 
-                /*IconButton(onClick = { mUserViewModel.deleteUserProfile(profileInfo) })
+                IconButton(onClick = { mUserViewModel.deleteUserProfile(profileInfo) })
                 {Icon(imageVector = Icons.Default.Delete,
-                    contentDescription = "Delete")}*/
+                    contentDescription = "Delete")}
        }
     }
 

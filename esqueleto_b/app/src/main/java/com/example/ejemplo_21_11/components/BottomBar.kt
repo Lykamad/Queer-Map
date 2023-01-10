@@ -31,7 +31,7 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
                 navController.navigate("Inicio")},
             icon = { Icon(imageVector = Icons.Default.Home,
                 contentDescription = "Home",
-                tint = Color.White)
+                tint = Color.Black)
             },
             //label = { Text(text = "Inicio") }
         )
@@ -42,7 +42,7 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
             },
             icon = { Icon(imageVector = Icons.Default.LocationOn,
                 contentDescription = "Mapa",
-                tint = Color.White)
+                tint = Color.Black)
             },
             //label = { Text(text = "Mapa") }
         )
@@ -53,7 +53,7 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
             },
             icon = { Icon(imageVector = Icons.Default.Person,
                 contentDescription = "Perfil",
-                tint = Color.White)
+                tint = Color.Black)
             },
             //label = { Text(text = "Mi Perfil") }
         )

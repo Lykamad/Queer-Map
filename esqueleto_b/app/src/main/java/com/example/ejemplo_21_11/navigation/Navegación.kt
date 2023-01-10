@@ -20,7 +20,7 @@ fun Navegacion (navController : NavHostController, userViewModel: UserViewModel)
     NavHost(navController = navController, startDestination = "inicio"){
         composable("listarUsuarios") {ListUsers(userViewModel) }
         composable("verPerfil") { ViewProfile(userViewModel) }
-        composable("crearUsuarios") {ProfileEdit(navController, userViewModel, userViewModelList) } //el orden importa //en el 3r val espera UserEntity pero le paso User -> ERROR
+        composable("crearUsuarios") {ProfileEdit(navController, userViewModel, userViewModelList) }
         composable("crearPerfil") {CreateProfile(navController, userViewModel,  profileViewModelList)}
         composable("miMapa") {MyMaps(navController)}
         composable("mapasEstablecimientos") { MapasEstablecimientos(navController) }
