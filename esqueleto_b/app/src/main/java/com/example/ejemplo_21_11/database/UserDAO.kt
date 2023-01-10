@@ -25,6 +25,21 @@ interface UserDAO {
     @Update
     suspend fun update(item: UserEntity)
 
+
+    //Actualizar perfil
+    @Query("SELECT * FROM perfil")
+    fun getAllPerfil(): LiveData<List<ProfileEntity>>
+
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertProfile (item: ProfileEntity)
+
+    @Update
+    suspend fun update(item: ProfileEntity)
+
+    @Delete
+    suspend fun deleteProfile(item: ProfileEntity)
+    //Fin actualizar perfil
+
     @Delete
     suspend fun delete(item: UserEntity)
 

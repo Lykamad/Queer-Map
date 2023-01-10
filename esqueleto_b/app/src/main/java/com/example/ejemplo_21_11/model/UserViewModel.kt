@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.*
+import com.example.ejemplo_21_11.database.ProfileEntity
 import com.example.ejemplo_21_11.database.UserDatabase
 import com.example.ejemplo_21_11.database.UserEntity
 import com.example.ejemplo_21_11.database.UserRepository
@@ -14,51 +15,48 @@ import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application): AndroidViewModel(application){
 
+    //Mi profile
 
-    //My profile
+    private val _profileName = MutableLiveData<String>("")
+    val profileName: LiveData<String> = _profileName
 
-
-    //Foto2
-    private val _profilePhoto = MutableLiveData<String>("")
-    val profilePhoto: LiveData<String> = _profilePhoto
-
-    fun onProfilePhotoChange(newData: String){
-        _profilePhoto.value = newData
+    fun onProfileNameChange(newData: String){
+        _profileName.value = newData
     }
 
-    //Nombre
-    var profileUserName by mutableStateOf("")
+    private val _profilePic = MutableLiveData<String>("")
+    val profilePic: LiveData<String> = _profilePic
 
-    fun onProfileUserNameChange(newData:String){
-        profileUserName = newData
+    fun onProfilePicChange(newData: String){
+        _profilePic.value = newData
     }
 
-    //Pronombres
-    var profilePronouns by mutableStateOf("")
+    private val _profilePronouns = MutableLiveData<String>("")
+    val profilePronouns: LiveData<String> = _profilePronouns
 
-    fun onProfilePronounsChange(newData:String){
-        profilePronouns = newData
+    fun onProfilePronounsChange(newData: String) {
+        _profilePronouns.value = newData
     }
 
-    //Ubicación
-    var profileLocation by mutableStateOf("")
+    private val _profileDescription = MutableLiveData<String>("")
+    val profileDescription: LiveData<String> = _profileDescription
 
-    fun onProfileLocationChange(newData:String){
-        profileLocation = newData
+    fun onProfileDescriptionChange(newData: String) {
+        _profileDescription.value = newData
     }
 
-    //Descripión
-    var profileDescription by mutableStateOf("")
+    private val _profileSexuality = MutableLiveData<String>("")
+    val profileSexuality: LiveData<String> = _profileSexuality
 
-    fun onProfileDescriptionChange(newData:String){
-        profileDescription = newData
+    fun onProfileSexualityChange(newData: String) {
+        _profileSexuality.value = newData
     }
 
-    //Orientación
-    var profileSexuality by mutableStateOf("")
+    private val _profileLocation = MutableLiveData<String>("")
+    val profileLocation: LiveData<String> = _profileLocation
 
-    fun onProfileSexualityChange(newData:String){
-        profileSexuality = newData
+    fun onProfileLocationChange(newData: String) {
+        _profileLocation.value = newData
     }
 
 
@@ -108,6 +106,7 @@ class UserViewModel(application: Application): AndroidViewModel(application){
 
     //Room Repository Functions
     val readAllData: LiveData<List<UserEntity>>
+    val readAllDataProfile: LiveData<List<ProfileEntity>>
     private val repository: UserRepository
 
     //inicializamos la instancia de la base de datos
@@ -115,6 +114,7 @@ class UserViewModel(application: Application): AndroidViewModel(application){
         val userDB= UserDatabase.getInstance(application).userDao()
         repository = UserRepository(userDB)
         readAllData = repository.readAllData
+        readAllDataProfile = repository.readAllDataProfile
     }
 
     fun addListUsers(users: List<UserEntity>){
@@ -134,6 +134,27 @@ class UserViewModel(application: Application): AndroidViewModel(application){
             repository.updateUser(userItem = user)
         }
     }
+
+    //Actualizar perfil
+    fun addProfile(profile: ProfileEntity){
+        viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
+            repository.addProfile(profile)
+        }
+    }
+
+
+    fun updateProfile(profile: ProfileEntity){
+        viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
+            repository.updateProfile(userItem = profile)
+        }
+    }
+
+    fun deleteUserProfile(profile: ProfileEntity){
+        viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
+            repository.deleteProfile(userItem = profile)
+        }
+    }
+    //Fin actualizar perfil
 
     fun deleteUser(user: UserEntity){
         viewModelScope.launch(Dispatchers.IO) {     // como en el DAO se definen con suspend al llamarlos se hace con launch
