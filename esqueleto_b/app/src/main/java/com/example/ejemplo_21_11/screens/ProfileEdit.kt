@@ -41,22 +41,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Center
     ) {
-        Image(
-            modifier = Modifier
-                .size(80.dp)
-                .border(0.5.dp, Color.Blue, CircleShape)
-                .padding(1.dp)
-                .clip(CircleShape),
-            contentScale = ContentScale.Crop,
-            painter = rememberAsyncImagePainter(
-                ImageRequest
-                    .Builder(LocalContext.current)
-                    .data(data = Uri.parse(userPhoto))
-                    .build()
-            ),
-            contentDescription = userName
-        )
-        Spacer(Modifier.size(10.dp))
+
         OutlinedTextField( //para que el usuario pueda escribir
             value = userName,
             onValueChange = { mUserViewModel.onUserNameChange(it)}, //cuando el ususrio teclee, es un evento {}
@@ -71,18 +56,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
         OutlinedTextField(
             value = userPhone,
             onValueChange = { mUserViewModel.onUserPhoneChange(it)},
-            label = { Text(text = "Introduce tu número") },
-            modifier = Modifier.padding(4.dp),
-            textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                fontStyle = FontStyle.Italic)
-        )
-        Spacer(Modifier.size(10.dp))
-        OutlinedTextField(
-            value = userEmail,
-            onValueChange = { mUserViewModel.onUserEmailChange(it)},
-            label = { Text(text = "Introduce tu email") },
+            label = { Text(text = "Introduce el tipo de local") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
                 fontWeight = FontWeight.Bold,
@@ -100,23 +74,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
                 fontSize = 20.sp,
                 fontStyle = FontStyle.Italic)
         )
-        Row(verticalAlignment = Alignment.Bottom,
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Switch(
-                checked = europe,
-                onCheckedChange = { mUserViewModel.onEuropeChange(it) },
-                colors = SwitchDefaults.colors(
-                    checkedThumbColor = Color.Blue,
-                    uncheckedThumbColor = Color.Blue,
-                    checkedTrackColor = Color.DarkGray,
-                    uncheckedTrackColor = Color.Gray,
-                    checkedTrackAlpha = 1.0f, //valor de transparencia. Rango (0,1)
-                    uncheckedTrackAlpha = 0.5f
-                )
-            )
-            Text(text = "Europa")
-        }
+
         Spacer(Modifier.size(15.dp))
         Button(onClick = { val newUser = UserEntity(null, userName, userEmail, userPhone,
            "https://cdn.pixabay.com/photo/2016/07/11/15/43/woman1509956_960_720.jpg", userCity, europe)

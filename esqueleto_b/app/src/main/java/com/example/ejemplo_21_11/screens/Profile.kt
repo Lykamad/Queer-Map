@@ -76,7 +76,7 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                     modifier = Modifier.padding(4.dp),
                     text = userInfo.cUserName,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 12.sp,
+                    fontSize = 16.sp,
                     fontStyle = FontStyle.Italic,
                 )
                 Spacer(Modifier.size(8.dp))
@@ -110,17 +110,9 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                 contentDescription = "Delete")}
         }
 
-        Spacer(Modifier.size(8.dp))
-        var europe = userInfo.cEurope //var class user
 
-        Text(
-            modifier = Modifier.padding(4.dp),
-            text = if(europe) "Continentes seleccionados: Europa"
-            else "Debe seleccionar un contienente para mostrar ciudades",
-            fontWeight = FontWeight.Bold,
-            fontSize = 12.sp,
-            fontStyle = FontStyle.Italic,
-        )
+
+
     }
 }
 

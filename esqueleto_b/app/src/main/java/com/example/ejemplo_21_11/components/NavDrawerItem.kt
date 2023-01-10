@@ -16,6 +16,6 @@ sealed class NavDrawerItem(
     object Favoritos: NavDrawerItem( "miMapa", Icons.Default.LocationOn, "Mapas")
     object CrearPerfil: NavDrawerItem( "crearPerfil", Icons.Default.Edit, "Crear perfil")
     object Perfil: NavDrawerItem( "verPerfil", Icons.Default.Person, "Ver perfiles")
-
+    object MisSitios: NavDrawerItem("listarUsuarios", Icons.Default.Add, "Mis Sitios")
 }
 

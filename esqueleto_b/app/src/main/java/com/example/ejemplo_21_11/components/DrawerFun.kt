@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: NavController) {
 
-    val listItems = listOf<NavDrawerItem>(NavDrawerItem.Inicio, NavDrawerItem.Favoritos, NavDrawerItem.CrearPerfil, NavDrawerItem.Perfil)
+    val listItems = listOf<NavDrawerItem>(NavDrawerItem.Inicio, NavDrawerItem.Favoritos, NavDrawerItem.CrearPerfil, NavDrawerItem.Perfil, NavDrawerItem.MisSitios)
     val rutaActual = navController.currentBackStackEntry?.destination?.route
 
     Column(){
