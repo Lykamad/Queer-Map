@@ -10,7 +10,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.ejemplo_21_11.R
-import com.google.maps.android.compose.GoogleMap
+//import com.google.maps.android.compose.GoogleMap
 
 @Composable
 fun MyMaps(navController: NavController) {
@@ -24,7 +24,7 @@ fun MyMaps(navController: NavController) {
     Image(painter = painterResource(id = R.drawable.logo),
         contentDescription = "Logo aplicación",
         modifier = Modifier
-            .padding(150.dp, 175.dp)
+            .padding(153.dp, 150.dp)
             .height(50.dp)
             .clickable { navController.navigate("mapasEstablecimientos") }
     )
