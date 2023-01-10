@@ -22,6 +22,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -31,9 +33,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
+import com.example.ejemplo_21_11.R
 import com.example.ejemplo_21_11.database.ProfileEntity
 import com.example.ejemplo_21_11.database.UserEntity
 import com.example.ejemplo_21_11.model.UserViewModel
+import com.example.ejemplo_21_11.ui.theme.Blue1
 
 @Composable
 fun ViewProfile(mUserViewModel: UserViewModel) {
@@ -51,11 +55,11 @@ fun ViewProfile(mUserViewModel: UserViewModel) {
 
 @Composable
 fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
-    Column() {
+    Column(Modifier.padding(5.dp,10.dp)) {
             Image(
                 modifier = Modifier
                     .size(80.dp)
-                    .border(0.5.dp, Color.Blue, CircleShape)
+                    .border(0.5.dp, Blue1, CircleShape)
                     .padding(1.dp)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
@@ -72,9 +76,9 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                 Text(
                     text = "Nombre:",
                     modifier = Modifier
-                        .padding(8.dp, 0.dp)
+                        .padding(8.dp, 0.dp),
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                 )
-
                 Text(
                     text = profileInfo.profileName,
                     modifier = Modifier
@@ -86,9 +90,9 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                 Text(
                     text = "Pronombres:",
                     modifier = Modifier
-                        .padding(8.dp, 0.dp)
+                        .padding(8.dp, 0.dp),
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                 )
-1
                 Text(
                     text = profileInfo.profilePronombres,
                     modifier = Modifier
@@ -100,22 +104,23 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                 Text(
                     text = "Sobre mí:",
                     modifier = Modifier
-                        .padding(8.dp, 0.dp)
+                        .padding(8.dp, 0.dp),
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                 )
-
                 Text(
                     text = profileInfo.profileDescripcion,
                     modifier = Modifier
                         .padding(8.dp, 0.dp)
                 )
+
                 Spacer(Modifier.size(15.dp))
 
                 Text(
                     text = "Orientación:",
                     modifier = Modifier
-                        .padding(8.dp, 0.dp)
+                        .padding(8.dp, 0.dp),
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                 )
-
                 Text(
                     text = profileInfo.profileOrientacion,
                     modifier = Modifier
@@ -127,9 +132,9 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                 Text(
                     text = "Ubicación:",
                     modifier = Modifier
-                        .padding(8.dp, 0.dp)
+                        .padding(8.dp, 0.dp),
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                 )
-
                 Text(
                     text = profileInfo.profileUbicacion,
                     modifier = Modifier
@@ -139,8 +144,6 @@ fun ViewProfile(profileInfo: ProfileEntity, mUserViewModel: UserViewModel) {
                 /*IconButton(onClick = { mUserViewModel.deleteUserProfile(profileInfo) })
                 {Icon(imageVector = Icons.Default.Delete,
                     contentDescription = "Delete")}*/
-
-
        }
     }
 

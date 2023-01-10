@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Blue
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
@@ -31,6 +32,7 @@ import coil.request.ImageRequest
 import com.example.ejemplo_21_11.R
 import com.example.ejemplo_21_11.database.ProfileEntity
 import com.example.ejemplo_21_11.model.UserViewModel
+import com.example.ejemplo_21_11.ui.theme.Blue1
 
 
 @Composable
@@ -63,7 +65,7 @@ fun CreateProfile(navController: NavController, mUserViewModel: UserViewModel, l
         Image(
             modifier = Modifier
                 .size(80.dp)
-                .border(0.5.dp, Color.Blue, CircleShape)
+                .border(0.5.dp, Blue1, CircleShape)
                 .padding(1.dp)
                 .clickable {launcher.launch("image/*") }
                 .clip(CircleShape),
@@ -86,10 +88,7 @@ fun CreateProfile(navController: NavController, mUserViewModel: UserViewModel, l
             onValueChange = { mUserViewModel.onProfileNameChange(it)}, //cuando el ususrio teclee, es un evento {}
             label = { Text(text = "Introduce tu nombre") },
             modifier = Modifier.padding(4.dp),
-            textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                fontStyle = FontStyle.Italic)
+            textStyle = TextStyle(fontSize = 16.sp)
         )
         Spacer(Modifier.size(10.dp))
         OutlinedTextField(
@@ -97,10 +96,7 @@ fun CreateProfile(navController: NavController, mUserViewModel: UserViewModel, l
             onValueChange = { mUserViewModel.onProfilePronounsChange(it)},
             label = { Text(text = "Introduce tus pronombres") },
             modifier = Modifier.padding(4.dp),
-            textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                fontStyle = FontStyle.Italic)
+            textStyle = TextStyle(fontSize = 16.sp)
         )
         Spacer(Modifier.size(10.dp))
         OutlinedTextField(
@@ -108,10 +104,7 @@ fun CreateProfile(navController: NavController, mUserViewModel: UserViewModel, l
             onValueChange = { mUserViewModel.onProfileDescriptionChange(it)},
             label = { Text(text = "Dinos algo sobre ti") },
             modifier = Modifier.padding(4.dp),
-            textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                fontStyle = FontStyle.Italic)
+            textStyle = TextStyle(fontSize = 16.sp)
         )
         Spacer(Modifier.size(10.dp))
         OutlinedTextField(
@@ -119,20 +112,14 @@ fun CreateProfile(navController: NavController, mUserViewModel: UserViewModel, l
             onValueChange = { mUserViewModel.onProfileSexualityChange(it)},
             label = { Text(text = "Introduce tu orientación sexual") },
             modifier = Modifier.padding(4.dp),
-            textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                fontStyle = FontStyle.Italic)
+            textStyle = TextStyle(fontSize = 16.sp)
         )
         OutlinedTextField(
             value = profileLocation,
             onValueChange = { mUserViewModel.onProfileLocationChange(it)},
             label = { Text(text = "Introduce tu ubicación") },
             modifier = Modifier.padding(4.dp),
-            textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                fontStyle = FontStyle.Italic)
+            textStyle = TextStyle(fontSize = 16.sp)
         )
         Spacer(Modifier.size(15.dp))
         Button(onClick = { val newProfile = ProfileEntity(null, profilePhoto, profileName,

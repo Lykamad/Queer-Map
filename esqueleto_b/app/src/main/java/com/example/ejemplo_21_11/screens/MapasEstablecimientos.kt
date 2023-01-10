@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.ejemplo_21_11.R
+import com.example.ejemplo_21_11.ui.theme.Blue1
+import com.example.ejemplo_21_11.ui.theme.Orange
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 //Clase para los comentarios de usuarios predefinidos
@@ -51,17 +53,13 @@ val listaComentarios = arrayListOf<Comentarios>(
 //Definimos la card para el restaurante
 @Composable
 fun ViewRestaurante() {
-    Card(
-
-        modifier = Modifier
+    Card(modifier = Modifier
             .width(450.dp)
             .padding(10.dp)
-            .height(200.dp),
+            .height(160.dp),
         backgroundColor = Color.Gray,
         shape = RoundedCornerShape(20.dp)
-
     ) {
-
         Box(modifier = Modifier
             .height(100.dp)
         )
@@ -71,35 +69,53 @@ fun ViewRestaurante() {
                 modifier = Modifier
                     .fillMaxSize(),
                 contentScale = ContentScale.Crop)
-
         }
     }
 
+    Box( modifier = Modifier
+        .padding(top = 175.dp)
+        .padding(10.dp)
+        .clip (RoundedCornerShape(20.dp))
+        .background(Orange)
+    ) {
+        Column(modifier = Modifier
+            .padding(20.dp,0.dp,185.dp)) {
+            Text(
+                text = "CABOA",
+                modifier = Modifier
+                    .padding(0.dp,10.dp,0.dp,0.dp),
+                // .padding(top = 220.dp),
+                fontSize = 24.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                color = Color.Black
+            )
+
+            Text(
+                text = "Restaurante",
+                modifier = Modifier
+                    .padding(0.dp,3.dp),
+                // .padding(top = 265.dp),
+                fontSize = 16.sp,
+                color = Color.Black
+            )
+
+            Text(
+                text = "C/ Correos, 10 Valencia",
+                modifier = Modifier
+                    .padding(0.dp,5.dp),
+                // .padding(top = 295.dp),
+                fontSize = 16.sp,
+                color = Color.Black
+            )
+        }
+    }
     Text(
-        text = "CABOA",
+        text = "Comentarios",
         modifier = Modifier
-            .padding(20.dp)
-            .padding(top = 225.dp),
+            .padding(20.dp,10.dp,0.dp,0.dp)
+            .padding(top = 298.dp),
         fontSize = 24.sp,
         fontFamily = FontFamily(Font(R.font.poppins_semibold)),
-        color = Color.Black
-        )
-
-    Text(
-        text = "Restaurante",
-        modifier = Modifier
-            .padding(20.dp)
-            .padding(top = 260.dp),
-        fontSize = 16.sp,
-        color = Color.Black
-    )
-
-    Text(
-        text = "C/ Correos, 10 Valencia",
-        modifier = Modifier
-            .padding(20.dp)
-            .padding(top = 290.dp),
-        fontSize = 16.sp,
         color = Color.Black
     )
 
@@ -129,7 +145,7 @@ fun CreateComment(comentario: Comentarios) {
                 .size(70.dp)
                 .padding(1.dp)
                 .clip(CircleShape)
-                .border(0.5.dp, color = androidx.compose.ui.graphics.Color.Blue, CircleShape),
+                .border(0.5.dp, Blue1, CircleShape),
             contentScale = ContentScale.Crop
         )
         Spacer(modifier = Modifier
@@ -140,7 +156,7 @@ fun CreateComment(comentario: Comentarios) {
             .weight(1f)
         ) {
             Text(text = comentario.Nombre,
-                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                fontWeight = FontWeight.Bold
             )
             Text(text = comentario.Comentario)
         }

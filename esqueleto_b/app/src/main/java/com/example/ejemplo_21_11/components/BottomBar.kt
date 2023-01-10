@@ -40,8 +40,9 @@ fun BottomBar(navController: NavController){ //pasar navcontroller para enlazar 
             onClick = { selectedIcon.value = 1
                 navController.navigate("miMapa")
             },
-            icon = { Image(painter = painterResource(id = R.drawable.map),//Icons.Default.Favorite,
-                contentDescription = "Mapa")
+            icon = { Icon(imageVector = Icons.Default.LocationOn,
+                contentDescription = "Mapa",
+                tint = Color.White)
             },
             //label = { Text(text = "Mapa") }
         )

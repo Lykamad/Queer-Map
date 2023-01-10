@@ -1,6 +1,7 @@
 package com.example.ejemplo_21_11.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
@@ -20,13 +21,14 @@ import kotlinx.coroutines.launch
 fun TopBar(scope: CoroutineScope, scaffoldState: ScaffoldState){
     TopAppBar(
         title = {
-            Text(text = "Queer Map")
             Image(painter = painterResource(id = R.drawable.logo_2),
                 contentDescription = "Logo aplicación",
                 modifier = Modifier
-                    .padding(15.dp, 10.dp)
+                    .padding(10.dp)
                     .height(35.dp)
-            )},
+            )
+            Text(text = "Queer Map")
+        },
         contentColor = Color.White,
         elevation = 10.dp,
         navigationIcon = {

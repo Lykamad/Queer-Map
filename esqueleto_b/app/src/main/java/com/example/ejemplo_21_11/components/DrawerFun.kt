@@ -36,7 +36,22 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
                 .padding(10.dp)
         )*/
         Row( ) {
+
+            Image(painter = painterResource(id = R.drawable.logo_2),
+                contentDescription = "Logo aplicación",
+                modifier = Modifier
+                    .padding(15.dp,12.dp,17.dp,20.dp)
+                    .height(35.dp)
+            )
             Text(
+                modifier = Modifier
+                    .padding(0.dp,12.dp),
+                text = "Queer Map",
+                fontSize = 24.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                color = Color.Black
+            )
+        /*Text(
                 modifier = Modifier
                  .padding(20.dp,12.dp,10.dp,20.dp),
                 text = "Queer Map",
@@ -49,13 +64,9 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
                 modifier = Modifier
                     .padding(0.dp,12.dp)
                    .height(35.dp)
-            )
+            )*/
         }
-        /*Spacer(modifier = Modifier
-            .height(10.dp)
-            .fillMaxWidth()
-            .padding(10.dp)
-        )*/
+
         listItems.forEach{
             DrawerItem(
                 item = it,
@@ -84,7 +95,6 @@ fun DrawerItem(item: NavDrawerItem,
     ) {
         Image(
             imageVector = item.icono,
-            //painter = painterResource(id = R.drawable.map),
             contentDescription = item.texto,
             colorFilter = ColorFilter.tint(Color.Black),
             modifier = Modifier
