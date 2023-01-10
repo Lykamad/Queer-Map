@@ -67,7 +67,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
         OutlinedTextField(
             value = userCity,
             onValueChange = { mUserViewModel.onUserCityChange(it)},
-            label = { Text(text = "Introduce tu ciudad") },
+            label = { Text(text = "Introduce la dirección") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
                 fontWeight = FontWeight.Bold,
