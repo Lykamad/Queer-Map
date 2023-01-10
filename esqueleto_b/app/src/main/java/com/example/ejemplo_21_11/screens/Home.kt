@@ -142,7 +142,7 @@ fun Home(navController: NavController) {
             }
         }
         Spacer(modifier = Modifier.size(10.dp))
-        CreateLugarView(fichaLugar = listaLugares[1])
+        CreateLugarCard(listaLugares[2])
     }
 }
 
