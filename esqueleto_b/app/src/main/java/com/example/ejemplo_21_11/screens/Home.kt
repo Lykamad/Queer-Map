@@ -17,12 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.ejemplo_21_11.Lugar
-import com.example.ejemplo_21_11.components.BottomBar
-import com.example.ejemplo_21_11.components.Drawer
-import com.example.ejemplo_21_11.components.TopBar
+import com.example.ejemplo_21_11.components.*
 import com.example.ejemplo_21_11.navigation.Navegacion
 import com.example.ejemplo_21_11.model.UserViewModel
 import com.example.ejemplo_21_11.model.UserViewModelFactory
@@ -30,7 +29,6 @@ import com.example.ejemplo_21_11.ui.theme.Ejemplo_21_11Theme
 
 @Preview
 @Composable
-
 fun Home(){
     val misLugares = listOf<Lugar>(
         Lugar(R.drawable.guakame, "Guakame", R.string.GuakameDescrip)

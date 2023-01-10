@@ -33,9 +33,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.em
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.ejemplo_21_11.Lugar
+import com.example.ejemplo_21_11.R
 import com.example.ejemplo_21_11.components.BottomBar
 import com.example.ejemplo_21_11.components.Drawer
 import com.example.ejemplo_21_11.components.TopBar
@@ -51,11 +55,11 @@ fun GetLugarInfo(){
     var lugarName by remember { mutableStateOf("") }
     Column(modifier = Modifier.fillMaxWidth(),
            verticalArrangement = Arrangement.Center,
-           HorizontalAlignment = Alignment.CenterHorizontally
+           horizontalAlignment = Alignment.CenterHorizontally
         ) {
-        TextField(value = lugarName,
+            TextField(value = lugarName,
                   onValueChange ={ lugarName = it},
-                  label={ Text(text = "Introduce el nombre del lugar")}
+                  label={Text(text = "Introduce el nombre del lugar")}
             )
             Button(onClick = { /*TODO*/ }) {
                 Text(text = "ACEPTAR",
