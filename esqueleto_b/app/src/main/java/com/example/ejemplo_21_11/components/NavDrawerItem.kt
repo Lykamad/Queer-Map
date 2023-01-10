@@ -11,9 +11,15 @@ sealed class NavDrawerItem(
     var icono: ImageVector,
     var texto: String
 ){
+<<<<<<< Updated upstream
     object Inicio: NavDrawerItem( "listarUsuarios", Icons.Default.Home, "Inicio")
     object Favoritos: NavDrawerItem( "miMapa", Icons.Default.LocationOn, "Mapas")
     object CrearPerfil: NavDrawerItem( "crearPerfil", Icons.Default.Edit, "Crear perfil")
     object Perfil: NavDrawerItem( "verPerfil", Icons.Default.Person, "Ver perfiles")
+=======
+    object Inicio: NavDrawerItem( "inicio", Icons.Default.Home, "Inicio")
+    object Favoritos: NavDrawerItem( "miMapa", Icons.Default.Star, "Mapas")
+    object Perfil: NavDrawerItem( "miPerfil", Icons.Default.Person, "Mi Perfil")
+>>>>>>> Stashed changes
 }
 

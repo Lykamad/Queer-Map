@@ -60,7 +60,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
         OutlinedTextField( //para que el usuario pueda escribir
             value = userName,
             onValueChange = { mUserViewModel.onUserNameChange(it)}, //cuando el ususrio teclee, es un evento {}
-            label = { Text(text = "Introduce tu nombre") },
+            label = { Text(text = "Introduce el nombre del lugar") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
                 fontWeight = FontWeight.Bold,

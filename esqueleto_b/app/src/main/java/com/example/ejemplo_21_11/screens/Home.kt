@@ -124,23 +124,12 @@ fun CreateLugarView(fichaLugar: Lugar){
             contentScale = ContentScale.Crop
 
             )
-        Box(modifier = Modifier
-            .fillMaxWidth()
-        ){
-            Text(text = fichaLugar.lugarName,
-            modifier = Modifier
-                .padding(125.dp,10.dp),
-                color = Color.Blue,
-                fontWeight = FontWeight.ExtraBold,
-                fontFamily = FontFamily.Cursive,
-                fontSize = 30.sp,
-                textDecoration = TextDecoration.Underline
-                )
-            
+
+
         }
 
     }
-}
+
 
 @Composable
 fun Home(navController: NavController) {
