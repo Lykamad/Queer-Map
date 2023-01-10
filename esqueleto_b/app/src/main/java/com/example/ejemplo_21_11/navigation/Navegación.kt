@@ -6,6 +6,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.ejemplo_21_11.components.NavDrawerItem
 import com.example.ejemplo_21_11.database.UserEntity
 import com.example.ejemplo_21_11.model.UserViewModel
 import com.example.ejemplo_21_11.screens.*
@@ -21,6 +22,6 @@ fun Navegacion (navController : NavHostController, userViewModel: UserViewModel)
         composable("miPerfil") {MyProfile(userViewModel)}
         composable("miMapa") {MyMaps(navController)}
         composable("mapasEstablecimientos") { MapasEstablecimientos(navController) }
-        composable("home") { Home(navController)}
+        composable("inicio") { Home(navController) }
    }
 }
