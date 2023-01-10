@@ -10,7 +10,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.ejemplo_21_11.R
-import com.google.maps.android.compose.GoogleMap
+
 
 @Composable
 fun MyMaps(navController: NavController) {
