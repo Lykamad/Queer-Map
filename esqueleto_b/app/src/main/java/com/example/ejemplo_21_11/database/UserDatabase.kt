@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database (entities = [UserEntity:: class], version=1, exportSchema = false) //NO EXAMEN ""
+@Database (entities = [UserEntity:: class, ProfileEntity:: class], version=2, exportSchema = false) //NO EXAMEN ""
 abstract class UserDatabase: RoomDatabase() {
     abstract fun userDao(): UserDAO
 
