@@ -118,7 +118,7 @@ fun Home(navController: NavController) {
 
     Column() {
         LazyColumn(modifier = Modifier.padding(10.dp)) {
-           
+
             items(listaLugares) { selectedLugar ->
                 CreateLugarCard(selectedLugar = selectedLugar)
             }

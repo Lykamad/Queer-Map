@@ -17,7 +17,7 @@ fun Navegacion (navController : NavHostController, userViewModel: UserViewModel)
     val userViewModelList : List<UserEntity> by userViewModel.readAllData.observeAsState(listOf())
     val profileViewModelList : List<ProfileEntity> by userViewModel.readAllDataProfile.observeAsState(listOf())
 
-    NavHost(navController = navController, startDestination = "listarUsuarios"){
+    NavHost(navController = navController, startDestination = "inicio"){
         composable("listarUsuarios") {ListUsers(userViewModel) }
         composable("verPerfil") { ViewProfile(userViewModel) }
         composable("crearUsuarios") {ProfileEdit(navController, userViewModel, userViewModelList) } //el orden importa //en el 3r val espera UserEntity pero le paso User -> ERROR
