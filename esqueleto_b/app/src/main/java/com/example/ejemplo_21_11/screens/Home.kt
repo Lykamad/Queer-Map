@@ -5,7 +5,9 @@ import android.app.Application
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -15,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.ejemplo_21_11.R
@@ -27,8 +31,8 @@ import com.example.ejemplo_21_11.model.UserViewModelFactory
 import com.example.ejemplo_21_11.ui.theme.QueerMapTheme
 
 data class Lugar (
-    val Foto: Int,
-    val Nombre: String,
+    val imageID: Int,
+    val lugarName: String,
 )
 
 //Array para colocar usuarios predefinidos
@@ -40,3 +44,21 @@ val listaLugares= arrayListOf<Lugar>(
     Lugar(R.drawable.asoko, "Asoko"),
     Lugar(R.drawable.la_sastreria, "La Sastreria")
 )
+
+@Composable
+fun CreateLugarCard() {
+    Card(
+        modifier = Modifier
+            .width(450.dp)
+            .padding(10.dp)
+            .height(200.dp),
+        backgroundColor = Color.Gray,
+        shape = RoundedCornerShape(20.dp)
+    ) {
+
+        Box(modifier = Modifier
+            .height(100.dp)
+        )
+        {
+            Image(painter = painterResource(id = selectedLugar.imageId), contentDescription = selectedLugar.lugarName )
+        }
