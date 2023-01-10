@@ -109,40 +109,20 @@ fun CreateLugarCard(selectedLugar: Lugar) {
     }
 }
 
-@Composable
-fun CreateLugarView(fichaLugar: Lugar){
-    Column(modifier = Modifier
-        .fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top
-    ) {
-        Image(painter = painterResource(id = fichaLugar.imageID), contentDescription = "Guakame",
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(200.dp),
-            alignment = Alignment.Center,
-            contentScale = ContentScale.Crop
-
-            )
 
 
-        }
-
-    }
 
 
 @Composable
 fun Home(navController: NavController) {
 
     Column() {
-        Row(modifier = Modifier.padding(10.dp)) {
-            listaLugares.forEach() { index ->
-                CreateLugarCard(selectedLugar = index)
-                Spacer(modifier = Modifier.size(6.dp))
+        LazyColumn(modifier = Modifier.padding(10.dp)) {
+           
+            items(listaLugares) { selectedLugar ->
+                CreateLugarCard(selectedLugar = selectedLugar)
             }
         }
-        Spacer(modifier = Modifier.size(10.dp))
-        CreateLugarCard(listaLugares[2])
     }
 }
 
