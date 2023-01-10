@@ -13,10 +13,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.ejemplo_21_11.R
 import com.example.ejemplo_21_11.database.UserEntity
 import com.example.ejemplo_21_11.model.UserViewModel
 
@@ -51,9 +54,8 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                 Text(
                     modifier = Modifier.padding(4.dp),
                     text = userInfo.cUserName,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp,
-                    fontStyle = FontStyle.Italic,
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                    fontSize = 20.sp
                 )
                 Spacer(Modifier.size(8.dp))
                 Text(
@@ -70,14 +72,13 @@ fun UserProfile(userInfo: UserEntity, mUserViewModel: UserViewModel) {
                 Text(
                     modifier = Modifier.padding(4.dp),
                     text = userInfo.cUserEmail,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 12.sp,
-                    fontStyle = FontStyle.Italic,
+                    fontSize = 16.sp
                 )
                 Spacer(Modifier.size(8.dp))
                 Text(
                     modifier = Modifier.padding(4.dp),
-                    text = userInfo.cUserCity
+                    text = userInfo.cUserCity,
+                    fontSize = 16.sp
                 )
             }
 

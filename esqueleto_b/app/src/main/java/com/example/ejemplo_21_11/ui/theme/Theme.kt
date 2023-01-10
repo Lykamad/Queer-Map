@@ -10,14 +10,12 @@ import androidx.compose.runtime.Composable
 
 private val DarkColorQueerMapTheme = darkColors(
     primary = Blue1,
-    primaryVariant = Pink,
     secondary = Orange,
     background = Blue2
 )
 
 private val LightColorQueerMapTheme = lightColors(
     primary = Blue1,
-    primaryVariant = Pink,
     secondary = Orange,
     background = Blue2
 )

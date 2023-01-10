@@ -8,11 +8,14 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.ejemplo_21_11.R
 import com.example.ejemplo_21_11.database.UserEntity
 import com.example.ejemplo_21_11.model.UserViewModel
 
@@ -38,9 +41,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
             label = { Text(text = "Introduce el nombre del lugar") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                fontStyle = FontStyle.Italic)
+                fontSize = 16.sp)
         )
         Spacer(Modifier.size(10.dp))
         OutlinedTextField(
@@ -49,9 +50,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
             label = { Text(text = "Introduce el tipo de local") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                fontStyle = FontStyle.Italic)
+                fontSize = 16.sp)
         )
         Spacer(Modifier.size(10.dp))
         OutlinedTextField(
@@ -60,9 +59,7 @@ fun ProfileEdit(navController: NavController, mUserViewModel: UserViewModel, lis
             label = { Text(text = "Introduce la dirección") },
             modifier = Modifier.padding(4.dp),
             textStyle = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                fontStyle = FontStyle.Italic)
+                fontSize = 16.sp)
         )
 
         Spacer(Modifier.size(15.dp))

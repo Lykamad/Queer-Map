@@ -118,7 +118,6 @@ fun ViewRestaurante() {
         fontFamily = FontFamily(Font(R.font.poppins_semibold)),
         color = Color.Black
     )
-
 }
 
 @Composable

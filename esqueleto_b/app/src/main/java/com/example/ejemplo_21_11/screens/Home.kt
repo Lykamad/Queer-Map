@@ -63,14 +63,11 @@ fun CreateLugarCard(selectedLugar: Lugar) {
     Card(
         shape = RoundedCornerShape(15.dp),
         elevation = 5.dp,
-
         modifier = Modifier
             .width(450.dp)
             .padding(10.dp)
-            .height(200.dp),
-
+            .height(200.dp)
     ) {
-
         Box(
             modifier = Modifier
                 .height(100.dp)
@@ -108,10 +105,6 @@ fun CreateLugarCard(selectedLugar: Lugar) {
         }
     }
 }
-
-
-
-
 
 @Composable
 fun Home(navController: NavController) {
